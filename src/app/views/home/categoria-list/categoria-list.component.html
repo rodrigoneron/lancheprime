@@ -1,0 +1,57 @@
+<table>
+  <tr>
+  <td>
+
+<div fxLayout="row" fxLayoutAlign="start center" *ngIf="categoria$ | async as categorias; else loading">
+  
+  <ul class="nav">
+    <li class="nav-item">
+      <h2 style="margin-left: 20px;">Escolha a Categoria</h2>
+    </li>
+  </ul>  
+  
+  <ng-container style="margin: 0.5%" *ngFor="let cat of categorias" class="div-categoria">
+    <a [routerLink]="['/produto',cat.id]" class="active">
+
+      <div class="card" style="width: 18rem; text-align: center;">
+        <p *ngIf="cat.id==1">
+          <img mat-card-image class="card-img-top"
+            src="https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/6:4/w_620%2Ch_413/the-ultimate-hamburger.jpg"
+            alt="Hambúrguer">
+        </p>
+        <p *ngIf="cat.id==2">
+          <img mat-card-image class="card-img-top"
+            src="https://www.sushimanscwb.com.br/wp-content/uploads/2018/10/1579_REFRIGERANTE_LATA_-_350ml_17d2e336feb44a2696fd6cf852c41b50-1.jpeg"
+            alt="Refrigerantes">
+        </p>
+        <p *ngIf="cat.id==3">
+          <img mat-card-image class="card-img-top"
+            src="https://uploads.metropoles.com/wp-content/uploads/2018/08/17175918/capa17.jpg" alt="Sucos">
+        </p>
+        <p *ngIf="cat.id==4">
+          <img mat-card-image class="card-img-top"
+            src="https://i.pinimg.com/originals/7a/b9/3c/7ab93c0294686d2102dab0153edebbd1.jpg" alt="Porçoes">
+        </p>
+        <div class="card-body">
+          <h1 class="card-title"><span>{{cat.nome}}</span></h1>
+        </div>
+      </div>
+    </a>
+  </ng-container>
+</div>
+<ng-template #loading style="align-content: center;">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+  </div>
+  <!--<img src="http://www.dommus.com.br/homologacao2/nova-ui2/images/layout/carregando.gif">-->
+</ng-template>
+
+</td>
+</tr>
+</table>
+
+<div class="card-body" style="text-align: center; padding-top: 20px;">
+  <button type="button" class="btn btn-info" style="text-align: center; margin: 20px;" (click)="goBack()">Voltar</button>
+  <button type="button" class="btn btn-info"
+  style="text-align: center; margin: 20px;" (click)="exibirPedido()">Exibir Pedido</button>
+  </div>

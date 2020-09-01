@@ -1,0 +1,41 @@
+<table>
+   <tr>
+   <td>
+   
+<div fxLayout="row" fxLayoutAlign="start center">
+   <div class="alert alert-primary" role="alert">
+      <h1>Total do Pedido: {{valorTotal | currency:'BRL'}} </h1>
+    </div>
+   <ng-container style="margin: 0.5%" class="div-pedido">      
+      <!-------------------------------------------------------------------------------------------------------->
+      <form>
+      <div class="card"   *ngFor="let ped of pedido"> 
+         <div class="card-body">
+            <h2 class="card-title"><span>{{ped.value.nome}}</span></h2>
+         </div>
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+               <h2 class="card-subtitle mb-2 text-muted"> {{ped.value.total | currency:'BRL'}}</h2>
+            </li>            
+         </ul>
+         <div class="card-body" style="text-align: center;">
+           <button type="button" class="btn btn-danger" (click)="removeProduto(ped.value)">-</button>
+           <input type="text" class="input" value="{{ped.value.quantidade}}">
+            <button type="button" class="btn btn-info" (click)="adicionaProduto(ped.value)">+</button>
+         </div>
+      </div>
+      </form>
+      <!------------------------------------------------------------------------------------------------------------->
+   </ng-container>
+</div>
+</td>
+</tr>
+</table>
+
+
+<div class="card-body" style="text-align: center; padding-top: 20px;">
+   <button type="button" class="btn btn-info" style="text-align: center; margin: 20px;" (click)="goBack()">Voltar</button>
+   <button type="button" class="btn btn-warning"
+   style="text-align: center; margin: 20px;" (click)="finalizarPedido()">Finalizar Pedido</button>
+   </div>
+

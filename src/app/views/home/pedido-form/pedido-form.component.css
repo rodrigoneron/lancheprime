@@ -1,0 +1,68 @@
+.card {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 0%;
+    padding-bottom: 0.5%;
+    min-height: 1px;
+    min-height: 300px;
+    margin: 5px;
+    float:left;
+    width: 18rem;
+}
+.card-title {
+    min-height: 65px;
+}
+.card-text {
+    min-height: 60px;
+}
+.list-group-item {
+    min-height: 60px;
+}
+.form-group {
+    max-width: 900px;
+}
+
+.input {
+    width: 40px; 
+    height: 40px;
+    border: 1px solid #a8a8a8;
+    border-radius: 4px 3px 6px / 2px 4px;
+    margin: 5px;
+    list-style:none;
+    text-align: center;
+}
+
+.mat-cad-pedido {
+    border: 1px solid #e4a1a1;
+    border-radius: 4px 3px 6px / 2px 4px;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 0%;
+    padding-bottom: 0.5%;
+    margin: 5px;
+    min-width: 180px;
+    list-style:none;
+    border:1px solid #c0c0c0;
+    float:left;
+}
+
+.mat-card-title-pedido {
+    padding-top: 0px;
+    padding-left: 15px;
+    padding-right: 15px;    
+    margin-bottom: 0px;
+    min-height: 50px;
+
+    position:relative;
+    float:left;
+}
+
+.mat-card-image {
+    padding-top: 0px;
+    padding-left: 15px;
+    padding-right: 5px;    
+    margin-bottom: 0px;
+    width: 170px; 
+    height: 150px;
+}
+

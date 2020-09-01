@@ -1,0 +1,41 @@
+<table>
+   <tr>
+   <td>
+
+<div fxLayout="row" fxLayoutAlign="start center" *ngIf="produto$ | async as produtos">
+   <ng-container style="margin: 0.5%" class="div-produto"> 
+      <ul class="nav">
+         <li class="nav-item">
+           <h2 style="margin-left: 20px;">Produtos</h2>
+         </li>         
+       </ul>    
+      <!-------------------------------------------------------------------------------------------------------->
+      <form>
+      <div class="card" *ngFor="let prod of produtos">
+         <div class="card-body">
+            <h2 class="card-title"><span>{{prod.nome}}</span></h2>
+            <p class="card-text"><span>{{prod.descricao}}</span></p>
+         </div>
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+               <h2 class="card-subtitle mb-2 text-muted"> {{prod.preco | currency:'BRL':true:'1.2-2'}}</h2>
+            </li>            
+         </ul>
+         <div class="card-body" style="text-align: center;">
+            <button type="button" class="btn btn-info" (click)="adicionaProduto(prod)">Adicionar</button>
+         </div>
+      </div>
+      </form>
+      <!------------------------------------------------------------------------------------------------------------->
+   </ng-container>
+</div>
+
+</td>
+</tr>
+</table>
+<div class="card-body" style="text-align: center; padding-top: 20px;">
+<button type="button" class="btn btn-info" style="text-align: center; margin: 20px;" (click)="goBack()">Voltar</button>
+<button type="button" class="btn btn-info"
+style="text-align: center; margin: 20px;" (click)="exibirPedido()">Exibir Pedido</button>
+</div>
+
